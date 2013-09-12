@@ -1,6 +1,6 @@
 .SUFFIXES: .c .cpp
 
-CC=g++-4.0
+CC=g++
 CFLAGS=-I . -I /usr/include/ -g -O2
 LIBS = -L/usr/lib  
 
@@ -16,8 +16,8 @@ LIBS = -L/usr/lib
 target = tricrf
 all: $(target)
 
-tricrf: Main.o tricrf1.o tricrf2.o tricrf3.o crf.o maxent.o evaluator.o param.o data.o lbfgs.o utility.o
-	$(CC) -o $@ Main.o tricrf1.o tricrf2.o tricrf3.o crf.o maxent.o evaluator.o param.o data.o lbfgs.o utility.o $(CFLAGS) $(LIBS)
+tricrf: Main.o TriCRF1.o TriCRF2.o TriCRF3.o CRF.o MaxEnt.o Evaluator.o Param.o Data.o LBFGS.o Utility.o
+	$(CC) -o $@ Main.o TriCRF1.o TriCRF2.o TriCRF3.o CRF.o MaxEnt.o Evaluator.o Param.o Data.o LBFGS.o Utility.o $(CFLAGS) $(LIBS)
 	
 clean:
 	rm $(target) *.o 
